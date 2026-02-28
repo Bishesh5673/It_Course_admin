@@ -9,7 +9,7 @@ import EditCourse from "./pages/EditCourse";
 function App() {
   return (
     <div className="flex"  >
-      <div  className="h-[100vh] w-[400px] border  bg-black">
+      <div  className=" w-[300px] ">
         <Header />
       </div>
 
