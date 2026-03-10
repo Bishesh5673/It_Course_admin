@@ -12,9 +12,7 @@ function EditCourse() {
   const [image, setImage] = useState(null);
   const [description, setDescription] = useState(state?.description || "");
   const [level, setLevel] = useState(state?.level || "");
-  const [date, setDate] = useState(
-    state?.date ? state.date.split("T")[0] : ""
-  );
+  const [date, setDate] = useState(state?.date ? state.date.split("T")[0] : "");
 
   const updateCourse = async (e) => {
     e.preventDefault();
@@ -30,13 +28,10 @@ function EditCourse() {
       formData.append("image", image);
     }
 
-    let res = await fetch(
-      `${baseUrl}/updateCourse/${state._id}`,
-      {
-        method: "PUT",
-        body: formData,
-      }
-    );
+    let res = await fetch(`${baseUrl}/updateCourse/${state._id}`, {
+      method: "PUT",
+      body: formData,
+    });
 
     res = await res.json();
     alert(res.message);
@@ -49,12 +44,9 @@ function EditCourse() {
         onSubmit={updateCourse}
         className="bg-white w-full max-w-6xl p-12 rounded-3xl shadow-2xl space-y-8"
       >
-        <h1 className="text-4xl font-bold text-center mb-10">
-          Edit Course
-        </h1>
+        <h1 className="text-4xl font-bold text-center mb-10">Edit Course</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
           <div>
             <label className="block mb-2 font-semibold">Title</label>
             <input
@@ -75,7 +67,11 @@ function EditCourse() {
           </div>
 
           <div>
-            <label className="block mb-2 font-semibold">Image (optional)</label>
+            <label className="block mb-2 font-semibold">Image</label>
+            <img
+              src={`http://localhost:9000/image/${state.image}`}
+              className="w-40 mb-4 rounded"
+            />
             <input
               type="file"
               onChange={(e) => setImage(e.target.files[0])}

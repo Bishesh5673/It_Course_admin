@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom'
+
 const baseUrl = "http://127.0.0.1:9000/api/course";
 
 function CreateCourse() {

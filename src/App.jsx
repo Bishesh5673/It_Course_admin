@@ -13,7 +13,7 @@ function App() {
         <Header />
       </div>
 
-      <div>
+      <div className="w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/editCourse" element={<EditCourse />} />

@@ -27,7 +27,7 @@ function Home() {
     getCourse();
   }, []);
   return (
-  <main className="min-h-screen bg-gray-100 px-6 md:px-20 py-16">
+  <main className="min-h-screen  bg-gray-300  px-6  md:px-20 py-16">
 
     {/* Top Section */}
     <section className="flex justify-between items-center mb-12">
