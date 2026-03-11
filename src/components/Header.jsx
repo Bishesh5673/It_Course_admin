@@ -27,7 +27,7 @@ function Header() {
         </NavLink>
 
         <NavLink
-          to="/userManagement"
+          to="/enrollments"
           className={({ isActive }) =>
             `px-4 py-3 rounded-xl transition ${
               isActive

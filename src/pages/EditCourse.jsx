@@ -13,6 +13,8 @@ function EditCourse() {
   const [description, setDescription] = useState(state?.description || "");
   const [level, setLevel] = useState(state?.level || "");
   const [date, setDate] = useState(state?.date ? state.date.split("T")[0] : "");
+const [demoVideo, setDemoVideo] = useState(state?.demoVideo || "");
+
 
   const updateCourse = async (e) => {
     e.preventDefault();
@@ -23,6 +25,8 @@ function EditCourse() {
     formData.append("description", description);
     formData.append("level", level);
     formData.append("date", date);
+    formData.append("demoVideo", demoVideo);
+
 
     if (image) {
       formData.append("image", image);
@@ -101,6 +105,19 @@ function EditCourse() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="w-full border rounded-xl p-4"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 font-semibold">
+           Add Demo Video
+          </label>
+          <input
+            type="text"
+            value={demoVideo}
+            onChange={(e) => setDemoVideo(e.target.value)}
+            placeholder="Youtube Link"
+            className="w-full border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none rounded-xl p-4 transition"
           />
         </div>
 
