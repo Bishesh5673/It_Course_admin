@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import CreateCourse from "./pages/CreateCourse";
 import EditCourse from "./pages/EditCourse";
 import Enrollments from "./pages/Enrollments";
+import AdminUserCourses from "./pages/AdminUserCourses";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/editCourse" element={<EditCourse />} />
           <Route path="/createcourse" element={<CreateCourse />} />
           <Route path="/enrollments" element={<Enrollments />} />
+          <Route path="/admin/user/:id" element={<AdminUserCourses />} />
         </Routes>
       </div>
     </div>
